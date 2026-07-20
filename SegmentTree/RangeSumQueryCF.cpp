@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-    int sumQuery(int left, int right, vector<int>& prefixSum) {
+    int sumQuery(int left, int right, vector<long long>& prefixSum) {
         if (left == 0) return prefixSum[right];
         return prefixSum[right] - prefixSum[left - 1];
     }
@@ -19,7 +19,7 @@ int main() {
     for (int i = 0; i < Q; i++) {
         cin >> queries[i][0] >> queries[i][1];
     }
-    vector<int> prefixSum(N);
+    vector<long long> prefixSum(N);
     prefixSum[0] = nums[0];
     for (int i = 1; i < N; i++) prefixSum[i] = prefixSum[i - 1] + nums[i]; 
     Solution obj;
