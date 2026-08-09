@@ -1,18 +1,17 @@
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
+import java.util.*;
+
+public class SplitLinkedListinParts {
+    int val;
+    SplitLinkedListinParts next;
+    SplitLinkedListinParts() {}
+    SplitLinkedListinParts(int val) { this.val = val; }
+    SplitLinkedListinParts(int val, SplitLinkedListinParts next) { this.val = val; this.next = next; }
+}
 class Solution {
-    public ListNode[] splitListToParts(ListNode head, int k) {
-        ListNode[] ans = new ListNode[k];
+    public SplitLinkedListinParts[] splitListToParts(SplitLinkedListinParts head, int k) {
+        SplitLinkedListinParts[] ans = new SplitLinkedListinParts[k];
         int L = 0;
-        ListNode curr = head;
+        SplitLinkedListinParts curr = head;
         while (curr != null) {
             curr = curr.next;
             L++;
@@ -20,7 +19,7 @@ class Solution {
         int eachBucketNodes = L / k;
         int extraNodes = L % k;
         curr = head;
-        ListNode prev = null;
+        SplitLinkedListinParts prev = null;
         for (int i = 0; i < k; i++) {
             ans[i] = curr;
             for (int count = 1; count <= eachBucketNodes + (extraNodes > 0 ? 1 : 0); count++) {
