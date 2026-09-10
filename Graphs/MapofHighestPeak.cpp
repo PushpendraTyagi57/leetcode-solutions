@@ -14,7 +14,7 @@ public:
         {
             for (int j = 0; j < n; j++)
             {
-                if (mat[i][j] == 0)
+                if (mat[i][j] == 1)
                 {
                     result[i][j] = 0;
                     que.push({i, j});
